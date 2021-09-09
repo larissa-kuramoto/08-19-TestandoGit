@@ -1,6 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { BackHandler, ImageBackgroundBase, StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+
+
+const LinkItem = (props:any)=>{
+    return(
+        <Text style={stylesLink.text}>{props.name}</Text>
+    );
+}
+const stylesLink = StyleSheet.create({
+    text:{
+        //backgroundColor:"red",
+        marginTop:10,
+        color: '#4A4A4C',
+        fontSize: 13.71,
+
+    }
+});
+
+
+const LinksImportantes = ()=>{
+    return(//Aqui dentro ficará o nosso JSX
+        <View style={stylesLinkImportantes.container}>
+            <LinkItem name="Home"/>
+            <LinkItem name="Post"/>
+            <LinkItem name="Videos"/>
+            <LinkItem name="Photos"/>
+            <LinkItem name="Community"/>
+        </View>
+    );
+};
+const stylesLinkImportantes = StyleSheet.create({
+    container:{
+        flexDirection: "row",
+        justifyContent:"space-between",
+        paddingHorizontal:40,
+        paddingVertical:10,
+
+        borderBottomColor:"red",
+        borderBottomWidth:1,
+
+    }
+});
 
 export default function App() {
   return (
@@ -29,7 +70,7 @@ export default function App() {
         </Image>
         
     </View>
-      <Text>Taylor Swift IS the music industry</Text>
+      <LinksImportantes />
       <StatusBar style="auto" />
     </View>
   );
