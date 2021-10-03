@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 export const Post = () => {
     return (
@@ -31,17 +31,31 @@ export const Post = () => {
 
             <View style={styles.likesShare}>
                 <View style={styles.likesShareBloco}>
-                <Image style={styles.imagemLikes} source={require('../../assets/like.png')} />
-                <Text style={styles.likesTexto}>Like</Text>
+                    <Image style={styles.imagemLikes} source={require('../../assets/like.png')} />
+                    <Text style={styles.likesTexto}>Like</Text>
                 </View>
                 <View style={styles.likesShareBloco}>
-                <Image style={styles.imagemLikes} source={require('../../assets/comentario.png')} />
-                <Text style={styles.likesTexto}>Comment</Text>
+                    <Image style={styles.imagemLikes} source={require('../../assets/comentario.png')} />
+                    <Text style={styles.likesTexto}>Comment</Text>
                 </View>
                 <View style={styles.likesShareBloco}>
-                <Image style={styles.imagemLikes} source={require('../../assets/share1.png')} />
-                <Text style={styles.likesTexto}>Share</Text>
+                    <Image style={styles.imagemLikes} source={require('../../assets/share1.png')} />
+                    <Text style={styles.likesTexto}>Share</Text>
                 </View>
+            </View>
+
+            <View style={styles.footerPost}>
+                <TouchableOpacity style={styles.btnLearMore}>
+                    <Text style={styles.btnLearMoreText}> Learn More</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btnMensagem}>
+                    <Image style={{ width: 16, height: 16 }} source={require('../../assets/btnmensagem.png')} />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btn3Pontos}>
+                    <Image style={{ height: 3, width: 16 }} source={require('../../assets/3pontos.png')} />
+                </TouchableOpacity>
+
+
             </View>
 
         </View>
@@ -109,14 +123,49 @@ const styles = StyleSheet.create({
         paddingLeft: 11,
         marginLeft: 10,
     },
-    likesShare:{
+    likesShare: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginHorizontal: 20,
-        marginTop: 20,
+        marginVertical: 20,
     },
-    likesShareBloco:{
+    likesShareBloco: {
         flexDirection: 'row',
         alignContent: 'center',
+    },
+    footerPost: {
+        height: 43,
+        flexDirection: 'row',
+        marginTop: 15,
+
+    },
+    btnLearMore: {
+        flex: 8,
+        backgroundColor: '#3D7BE2',
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    btnMensagem: {
+        flex: 2,
+        marginLeft: 10,
+        backgroundColor: '#3D7BE2',
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    btn3Pontos: {
+        flex: 2,
+        marginLeft: 10,
+        borderWidth: 2,
+        borderColor: '#3D7BE2',
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    btnLearMoreText: {
+        color: "#FDF7FD",
+        fontSize: 16,
     },
 })
